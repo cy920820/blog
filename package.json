@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve",
+    "build": "bundler exec jekyll clean && bundler exec jekyll b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riggraz/no-style-please.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riggraz/no-style-please/issues"
+  },
+  "homepage": "https://github.com/riggraz/no-style-please#readme"
+}

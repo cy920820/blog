@@ -1,0 +1,32 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+  - title: Info
+    entries:
+      - title: I am a software developer, work for Kunlun Wanwei Group.
+      - title: <a href='https://github.com/cy920820' target="__blank">Github Repo</a>
+      - title: You can contact me through <a href='https://twitter.com/cy920820' target="__blank">Twitter</a> or <a href='mailto:cy920820@gmail.com' target="__blank">Email</a>.
+
+  - title: All posts
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
+
+  # - title: Poetry and distance
+  #   post_list:
+  #     category: travel
+  #     show_more: true
+  #     show_more_text: See more posts...
+  #     show_more_url: example2-archive.html
+
+  - title: RSS
+    url: feed.xml
+
+  - title: Links
+    entries:
+      - title: Friendship links
+        entries:
+          - title: <a href='https://www.hao4k.cn/' target="__blank">Hao4K</a>

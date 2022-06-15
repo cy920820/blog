@@ -2,6 +2,7 @@
 
 backend:
   name: git-gateway
+  repo: cy920820/blog
   branch: main # Branch to update (optional; defaults to master)
 media_folder: 'assets/uploads'
 collections:

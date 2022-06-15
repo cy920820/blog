@@ -8,4 +8,4 @@ gem "no-style-please"
 
 gem "webrick", "~> 1.7"
 
-gem 'github-pages'
+# gem 'github-pages'

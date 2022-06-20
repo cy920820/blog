@@ -1,0 +1,79 @@
+.back-to-top {
+  position: fixed;
+  z-index: 2;
+  right: -108px;
+  bottom: 0;
+  width: 108px;
+  height: 150px;
+  // なかまに(紅シャケ) https://www.pixiv.net/artworks/83996495
+  background: url('/assets/imgs/back-to-top.png') no-repeat 0 0;
+  background-size: 108px 450px;
+  opacity: 0.6;
+  transition: opacity 0.3s, right 0.8s;
+
+  &:hover {
+      background-position: 0 -150px;
+      opacity: 1;
+  }
+
+  &.load {
+      right: 0;
+  }
+
+  &.ani-leave {
+      background-position: 0 -150px;
+      animation: ani-leave 390ms ease-in-out;
+      animation-fill-mode: forwards;
+  }
+
+  &.leaved {
+      pointer-events: none;
+      background: none;
+      transition: none;
+  }
+
+  &.ending {
+      pointer-events: none;
+
+      &::after {
+          opacity: 1;
+      }
+  }
+
+  &::after {
+      content: '';
+      position: fixed;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+      width: 108px;
+      height: 150px;
+      background: url('/assets/imgs/back-to-top.png') no-repeat 0 0;
+      background-size: 108px 450px;
+      background-position: 0 -300px;
+      transition: opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+  }
+}
+
+@keyframes ani-leave {
+  0% {
+      transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(108px);
+  }
+}
+
+.display-mode-dark {
+  background-color: #000;
+  color: #fff;
+
+  a {
+    color: #97e172;
+  }
+}
+
+

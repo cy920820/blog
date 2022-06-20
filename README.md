@@ -11,4 +11,4 @@ Todo:
 - [ ] Import Valine
 - [ ] Import cPlayer
 - [ ] Console output hire info
-
+- [ ] SEO

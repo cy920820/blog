@@ -10,17 +10,26 @@ entries:
 
   - title: All posts
     post_list:
-      limit: 5
+      limit: 8
       show_more: true
       show_more_text: See archive...
       show_more_url: archive.html
 
-  # - title: Poetry and distance
-  #   post_list:
-  #     category: travel
-  #     show_more: true
-  #     show_more_text: See more posts...
-  #     show_more_url: example2-archive.html
+  - title: Til
+    post_list:
+      category: til
+      limit: 3
+      show_more: true
+      show_more_text: See more posts...
+      show_more_url: til-archive.html
+
+  - title: Weekly
+    post_list:
+      category: weekly
+      limit: 3
+      show_more: true
+      show_more_text: See more posts...
+      show_more_url: weekly-archive.html
 
   - title: RSS
     url: feed.xml

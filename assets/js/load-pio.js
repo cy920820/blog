@@ -1,24 +1,4 @@
-var 引流 = [
-  'https://space.bilibili.com/672328094',
-  'https://www.bilibili.com/video/BV1FZ4y1F7HH',
-  'https://www.bilibili.com/video/BV1FX4y1g7u8',
-  'https://www.bilibili.com/video/BV1aK4y1P7Cg',
-  'https://www.bilibili.com/video/BV17A411V7Uh',
-  'https://www.bilibili.com/video/BV1JV411b7Pc',
-  'https://www.bilibili.com/video/BV1AV411v7er',
-  'https://www.bilibili.com/video/BV1564y1173Q',
-
-  'https://www.bilibili.com/video/BV1MX4y1N75X',
-  'https://www.bilibili.com/video/BV17h411U71w',
-  'https://www.bilibili.com/video/BV1ry4y1Y71t',
-  'https://www.bilibili.com/video/BV1Sy4y1n7c4',
-  'https://www.bilibili.com/video/BV15y4y177uk',
-  'https://www.bilibili.com/video/BV1PN411X7QW',
-  'https://www.bilibili.com/video/BV1Dp4y1H7iB',
-  'https://www.bilibili.com/video/BV1bi4y1P7Eh',
-  'https://www.bilibili.com/video/BV1vQ4y1Z7C2',
-  'https://www.bilibili.com/video/BV1oU4y1h7Sc',
-]
+var 引流 = ['https://0x403.com', 'https://twitter.com/cy920820', 'https://www.instagram.com/6379616e/']
 
 const initConfig = {
   mode: 'fixed',
@@ -35,7 +15,7 @@ const initConfig = {
       { selector: '.post-content a, .page-content a, .post a', type: 'link' },
     ],
   },
-  night: 'changeDisplayMode()',
+  // night: 'changeDisplayMode()',
   model: ['https://cdn.jsdelivr.net/gh/journey-ad/blog-img/live2d/Diana/Diana.model3.json', 'https://cdn.jsdelivr.net/gh/journey-ad/blog-img/live2d/Ava/Ava.model3.json'],
   tips: true,
   onModelLoad: onModelLoad,
@@ -224,7 +204,28 @@ function onModelLoad(model) {
 var pio_reference
 window.onload = 加载圣·嘉然
 
+const setLocal = function (key, value) {
+  window.localStorage.setItem(key, JSON.stringify(value))
+}
+const getLocal = function (key) {
+  const value = window.localStorage.getItem(key)
+  return JSON.parse(value)
+}
+
+initDisplayMode()
+
+function initDisplayMode() {
+  let displayMode = getLocal('display-mode')
+  if (!displayMode) {
+    setLocal('display-mode', 'dark')
+    displayMode = 'dark'
+  } else if (displayMode === 'dark') {
+    document.documentElement.classList.add(`display-mode-${displayMode}`)
+  }
+}
+
 // 切换网页 Display Mode
 function changeDisplayMode() {
-  $('body').toggleClass('display-mode-normal display-mode-dark')
+  $('html').toggleClass('display-mode-dark')
+  setLocal('display-mode', $('html').hasClass('display-mode-dark') ? 'dark' : 'normal')
 }

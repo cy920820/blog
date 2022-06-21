@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
   {%- include head.html -%}
-  <body a="{{ site.theme_config.appearance | default: "auto" }}" class="display-mode-dark">
+  <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="page-content" aria-label="Content">
       <div class="w">
         {{ content }}
       </div>
     </main>
+    
     {%-if site.goat_counter and jekyll.environment == "production"-%}
       {%-include goat_counter.html-%}
     {%-endif-%}
 
-    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@8c680d2/libs/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@63a04be/libs/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+
+    <!-- Load js for playgames canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/61062/orbit_controls.js"></script>
 
     <!-- Load TweenLite -->
     <script src="https://cdn.jsdelivr.net/npm/greensock@1.20.2/dist/TweenLite.js"></script>
@@ -24,12 +29,13 @@
     <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.3.1/dist/cubism4.min.js"></script>
 
     <!-- Load pio and alternative loader -->
-    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@8c680d2/live2d/lib/pio.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@8c680d2/live2d/lib/pio_sdk4.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@8c680d2/live2d/load-pio.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@63a04be/live2d/lib/pio.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@63a04be/live2d/lib/pio_sdk4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cy920820/cdn@63a04be/live2d/load-pio.js"></script>
 
     <!-- custom js files -->
     <script type="text/javascript" src="{{ site.baseurl }}/assets/js/custom.js"></script>
+    <!-- <script type="text/javascript" src="{{ site.baseurl }}/assets/js/load-pio.js"></script> -->
     
     <!-- custom js files -->
     {% if page.custom_js %}

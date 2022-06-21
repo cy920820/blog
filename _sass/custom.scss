@@ -12,8 +12,8 @@
   transition: opacity 0.3s, right 0.8s;
 
   &:hover {
-      background-position: 0 -150px;
-      opacity: 1;
+		background-position: 0 -150px;
+		opacity: 1;
   }
 
   &.load {
@@ -21,59 +21,111 @@
   }
 
   &.ani-leave {
-      background-position: 0 -150px;
-      animation: ani-leave 390ms ease-in-out;
-      animation-fill-mode: forwards;
+		background-position: 0 -150px;
+		animation: ani-leave 390ms ease-in-out;
+		animation-fill-mode: forwards;
   }
 
   &.leaved {
-      pointer-events: none;
-      background: none;
-      transition: none;
+		pointer-events: none;
+		background: none;
+		transition: none;
   }
 
   &.ending {
-      pointer-events: none;
+		pointer-events: none;
 
-      &::after {
-          opacity: 1;
-      }
+		&::after {
+				opacity: 1;
+		}
   }
 
   &::after {
-      content: '';
-      position: fixed;
-      z-index: 2;
-      right: 0;
-      bottom: 0;
-      width: 108px;
-      height: 150px;
-      background: url('/assets/imgs/back-to-top.png') no-repeat 0 0;
-      background-size: 108px 450px;
-      background-position: 0 -300px;
-      transition: opacity 0.3s;
-      opacity: 0;
-      pointer-events: none;
+		content: '';
+		position: fixed;
+		z-index: 2;
+		right: 0;
+		bottom: 0;
+		width: 108px;
+		height: 150px;
+		background: url('/assets/imgs/back-to-top.png') no-repeat 0 0;
+		background-size: 108px 450px;
+		background-position: 0 -300px;
+		transition: opacity 0.3s;
+		opacity: 0;
+		pointer-events: none;
   }
 }
 
 @keyframes ani-leave {
   0% {
-      transform: translateX(0);
+		transform: translateX(0);
   }
 
   100% {
-      transform: translateX(108px);
+		transform: translateX(108px);
   }
 }
 
-.display-mode-dark {
-  background-color: #000;
-  color: #fff;
+:root {
+  --c-bg: #fff;
+  --c-font: #000;
+  --c-scrollbar: #eee;
+  --c-scrollbar-hover: #bbb;
+  --c-link: rgba(0, 0, 0, .6);
+}
+
+html.display-mode-dark {
+  // --c-bg: radial-gradient(#1A5970 0%,#000 100%);
+  --c-bg: #050505;
+  --c-font: #fff;
+  --c-scrollbar: #111;
+  --c-scrollbar-hover: #222;
+  --c-link: #97e172;
+}
+
+html {
+  background: var(--c-bg);
+  color: var(--c-font);
 
   a {
-    color: #97e172;
+    color: var(--c-link);
   }
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--c-scrollbar)
+}
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner{
+  border-radius: 10px;
+  background-color: var(--c-bg)
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--c-scrollbar)
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--c-scrollbar-hover)
+}
+
+.canvas-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  // playgames
+  canvas {
+    filter: drop-shadow(0 0 3em rgba(0,0,0,1));
+  }
+  
+  
+  video#myVideo {
+    position: absolute;
+    top: 0;
+  }
+}
 

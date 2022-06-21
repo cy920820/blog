@@ -1,5 +1,6 @@
 ---
 layout: default
+name: home
 ---
 
 <header>
@@ -9,7 +10,14 @@ layout: default
   {%-endif-%}
 </header>
 
-{%-include menu_item.html collection=site.data.menu.entries-%} {{ content }}
+<main class="prose">{%-include menu_item.html collection=site.data.menu.entries-%} {{ content }}</main>
+
+<section class="canvas-wrapper">
+  <!-- <div id="container"></div>
+  <video id="myVideo" autoplay controls loop width="640" height="320" style="display: none" crossorigin="anonymous">
+    <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/61062/rin-SD.mp4" type="video/mp4" />
+  </video> -->
+</section>
 
 <footer class="copyright">CC BY-NC-SA 4.0 2022-PRESENT © Cui Yang</footer>
 <a href="javascript:void(0);" class="back-to-top" target="_self"></a>

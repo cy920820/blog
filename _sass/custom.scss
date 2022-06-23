@@ -116,16 +116,5 @@ html {
   top: 0;
   bottom: 0;
   z-index: -1;
-
-  // playgames
-  canvas {
-    filter: drop-shadow(0 0 3em rgba(0,0,0,1));
-  }
-  
-  
-  video#myVideo {
-    position: absolute;
-    top: 0;
-  }
 }
 
